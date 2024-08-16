@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h1>Edit Customer</h1>
+
+<form asp-action="Edit">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <br/>
+
+    <div class="form-grp">
+        <input type="submit" value="Save" class="btn btn-primary" />
+       
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+    </div>
+
+
+</form>
+
+<style>
+    .form-grp {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
